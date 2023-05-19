@@ -54,13 +54,13 @@ const SingleProduct = () => {
     }
     const productFilter = []
 
-    if (productInfo.type === 'book') {
+    if (productInfo.type === 'books') {
         productFilter.push('scifi', 'business', 'mystery', 'cookbooks', 'accessories')
     }
     else if (productInfo.type === 'cloths') {
         productFilter.push('men', 'women')
     }
-    else if (productInfo.type === 'shoe') {
+    else if (productInfo.type === 'shoes') {
         productFilter.push('running', 'football', 'formal', 'casual')
     }
     else if (productInfo.type === 'electronics') {
@@ -124,7 +124,7 @@ const SingleProduct = () => {
         }
     }
     const shoeBrand = ['adidas', 'hushpuppies', 'nike', 'reebok', 'vans']
-    const typeDropdown = ['book', 'cloths', 'shoe', 'electronics', 'jewelry'];
+    const typeDropdown = ['books', 'cloths', 'shoes', 'electronics', 'jewelry'];
 
 
 
@@ -160,7 +160,7 @@ const SingleProduct = () => {
                         <Grid item xs={12} sm={6}>
                             <TextField label="Rating" name='rating' value={productInfo.rating} onChange={handleOnchange} variant="outlined" inputMode='numeric' fullWidth />
                         </Grid>
-                        <Grid item xs={12} sm={(productInfo.type === 'book' || productInfo.type === 'shoe') ? 6 : 12} >
+                        <Grid item xs={12} sm={(productInfo.type === 'books' || productInfo.type === 'shoes') ? 6 : 12} >
                             <FormControl fullWidth>
                                 <InputLabel id="demo-simple-select-label">Product Category</InputLabel>
                                 <Select
@@ -178,13 +178,13 @@ const SingleProduct = () => {
                             </FormControl>
                         </Grid>
                         {
-                            productInfo.type === 'book' &&
+                            productInfo.type === 'books' &&
                             <Grid item xs={12} sm={6}>
                                 <TextField label="Author" name='author' value={productInfo.author} onChange={handleOnchange} variant="outlined" fullWidth />
                             </Grid>
                         }
                         {
-                            productInfo.type === 'shoe' &&
+                            productInfo.type === 'shoes' &&
                             <Grid item xs={12} sm={6}>
                                 <FormControl fullWidth>
                                     <InputLabel id="demo-simple-select-label">Shoe Brand</InputLabel>

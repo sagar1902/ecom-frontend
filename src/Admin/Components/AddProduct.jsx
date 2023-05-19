@@ -55,7 +55,7 @@ const AddProduct = ({ getProductInfo, data }) => {
                         brand: productInfo.brand,
                         price: productInfo.price,
                         category: productInfo.category,
-                        // image: productInfo.image,
+                        image: productInfo.image,
                         rating: productInfo.rating,
                         type: productInfo.type,
                         author: productInfo.author,
@@ -71,7 +71,7 @@ const AddProduct = ({ getProductInfo, data }) => {
                     toast.success("Product added successfully", { autoClose: 500, theme: 'colored' })
                     setProductInfo({
                         name: "",
-                        // image: "",
+                        image: "",
                         price: "",
                         rating: "",
                         category: "",
@@ -92,13 +92,13 @@ const AddProduct = ({ getProductInfo, data }) => {
     }
     const productFilter = []
 
-    if (productInfo.type === 'book') {
+    if (productInfo.type === 'books') {
         productFilter.push('scifi', 'business', 'mystery', 'cookbooks', 'accessories')
     }
     else if (productInfo.type === 'cloths') {
         productFilter.push('men', 'women')
     }
-    else if (productInfo.type === 'shoe') {
+    else if (productInfo.type === 'shoes') {
         productFilter.push('running', 'football', 'formal', 'casual')
     }
     else if (productInfo.type === 'electronics') {
@@ -108,7 +108,7 @@ const AddProduct = ({ getProductInfo, data }) => {
         productFilter.push('all')
 
     }
-    const typeDropdown = ['book', 'cloths', 'shoe', 'electronics'];
+    const typeDropdown = ['books', 'cloths', 'shoes', 'electronics'];
     const shoeBrand = ['adidas', 'hushpuppies', 'nike', 'reebok', 'vans']
 
 
@@ -168,13 +168,13 @@ const AddProduct = ({ getProductInfo, data }) => {
                                     </FormControl>
                                 </Grid>
                                 {
-                                    productInfo.type === 'book' &&
+                                    productInfo.type === 'books' &&
                                     <Grid item xs={12} >
                                         <TextField label="Author" name='author' value={productInfo.author} onChange={handleOnchange} variant="outlined" required fullWidth />
                                     </Grid>
                                 }
                                 {
-                                    productInfo.type === 'shoe' &&
+                                    productInfo.type === 'shoes' &&
                                     <Grid item xs={12} >
                                         <FormControl fullWidth>
                                             <InputLabel id="demo-simple-select-label">Shoe Brand</InputLabel>
@@ -194,9 +194,9 @@ const AddProduct = ({ getProductInfo, data }) => {
                                         </FormControl>
                                     </Grid>
                                 }
-                                {/* <Grid item xs={12} >
+                                <Grid item xs={12} >
                                     <TextField label="Image URL" name='image' value={productInfo.image} onChange={handleOnchange} variant="outlined" fullWidth />
-                                </Grid> */}
+                                </Grid>
                                 <Grid item xs={12} sm={6}>
                                     <TextField label="Price" name='price' value={productInfo.price} onChange={handleOnchange} variant="outlined" inputMode='numeric' fullWidth />
                                 </Grid>

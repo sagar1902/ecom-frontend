@@ -8,6 +8,7 @@ import { Transition } from '../../Constants/Constant';
 
 const AddUser = ({ getUser }) => {
     const [open, setOpen] = useState(false);
+    let authToken = localStorage.getItem("Authorization")
     const [credentials, setCredentials] = useState({ firstName: "", lastName: '', email: "", phoneNumber: '', password: "" })
     const handleOnChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
@@ -40,13 +41,17 @@ const AddUser = ({ getUser }) => {
                 toast.error("Please enter password with more than 5 characters", { autoClose: 500, theme: 'colored' })
             }
             else if (credentials.email && credentials.firstName && credentials.lastName && credentials.phoneNumber && credentials.password) {
-                const sendAuth = await axios.post(`${process.env.REACT_APP_REGISTER}`,
+                const sendAuth = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/admin/adduser`,
                     {
                         firstName: credentials.firstName,
                         lastName: credentials.lastName,
                         email: credentials.email,
                         phoneNumber: credentials.phoneNumber,
                         password: credentials.password,
+                    }, {
+                        headers: {
+                            'Authorization': authToken
+                        }
                     })
                 const receive = await sendAuth.data
                 setOpen(false);

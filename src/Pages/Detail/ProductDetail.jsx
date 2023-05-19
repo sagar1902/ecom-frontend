@@ -110,10 +110,10 @@ const ProductDetail = () => {
         setSimilarProduct(data)
     }
     let data = [];
-    if (cat === 'shoe') {
+    if (cat === 'shoes') {
         data.push(product?.brand, product?.gender, product?.category)
     }
-    else if (cat === 'book') {
+    else if (cat === 'books') {
         data.push(product.author, product.category)
     }
     else if (cat === 'cloths') {

@@ -122,7 +122,7 @@ const ProductChart = ({ products, review, cart, wishlist, paymentData }) => {
         },
         {
             name: "Books",
-            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "book").length
+            "Quantity in wishlist": wishlist.filter(prod => prod.productId.type === "books").length
         },
         // {
         //     name: "Jewelry",

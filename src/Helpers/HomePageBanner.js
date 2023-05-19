@@ -2,27 +2,33 @@ import { GroupCloth, Shoes, Electronics, FemaleCloth, MaleCloth, Books, Jewelry 
 const data = [
     {
         img: GroupCloth,
-        name: "Cloths"
+        name: "Cloths",
+        url: "Cloths"
     },
     {
         img: Shoes,
-        name: "Shoe"
+        name: "Shoes",
+        url: "Shoes"
     },
     {
         img: FemaleCloth,
-        name: "Women"
+        name: "Women",
+        url: "Cloths"
     },
     {
         img: Electronics,
-        name: "Electronics"
+        name: "Electronics",
+        url: "Electronics"
     },
     {
         img: MaleCloth,
-        name: "Men"
+        name: "Men",
+        url: "Cloths"
     },
     {
         img: Books,
-        name: "Book"
+        name: "Books",
+        url: "Books"
     },
     // {
     //     img: Jewelry,

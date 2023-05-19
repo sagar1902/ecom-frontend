@@ -38,13 +38,13 @@ const SingleCategory = () => {
 
     const productFilter = []
 
-    if (cat === 'book') {
+    if (cat === 'books') {
         productFilter.push('All', 'Scifi', 'Business', 'Mystery', 'Cookbooks', 'Accessories', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
     else if (cat === 'cloths') {
         productFilter.push('All', 'Men', 'Women', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
-    else if (cat === 'shoe') {
+    else if (cat === 'shoes') {
         productFilter.push('All', 'Running', 'Football', 'Formal', 'Casual', 'Price Low To High', 'Price High To Low', 'High Rated', 'Low Rated')
     }
     else if (cat === 'electronics') {
